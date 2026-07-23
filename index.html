@@ -1,263 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bijouterie Larbi à Fréha, Tizi Ouzou - Découvrez notre collection exclusive de bijoux en or, bagues, colliers, bracelets, parures et service de réparation.">
-    <title>Bijouterie Larbi | L'élégance en Or, la beauté pour toujours</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bijouterie Larbi | Haute Joaillerie & Bijoux de Luxe</title>
+  <!-- FontAwesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Fonts Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header id="header">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-title">BIJOUTERIE <span>LARBI</span></span>
-                <span class="logo-sub">Fréha - Tizi Ouzou</span>
-            </a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Accueil</a></li>
-                    <li><a href="#about" class="nav-link">À Propos</a></li>
-                    <li><a href="#services" class="nav-link">Nos Services</a></li>
-                    <li><a href="#galerie" class="nav-link">Galerie</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-toggle" id="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+  <!-- 1. Barre Supérieure (Top Bar) -->
+  <div class="top-bar">
+    <div class="contact-info">
+      <span><i class="fa-solid fa-phone"></i> +213 550 00 00 00</span>
+      <span><i class="fa-solid fa-location-dot"></i> Alger, Algérie</span>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="badge">Collection Exclusive 2026</div>
-            <h1>L'élégance en Or,<br><span>la beauté pour toujours</span></h1>
-            <p>Découvrez l'art de la joaillerie fine chez Bijouterie Larbi. Des créations uniques en or pur pour sublimer vos moments précieux.</p>
-            <div class="hero-buttons">
-                <a href="#galerie" class="btn btn-primary">Découvrir la collection <i class="fas fa-arrow-right"></i></a>
-                <a href="https://wa.me/213798151902" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Contactez-nous</a>
-            </div>
-        </div>
-    </section>
+    <div class="social-icons-top">
+      <a href="#" class="social-btn fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-btn ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-btn tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="social-btn wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="section-tag">Maison de Confiance</span>
-                    <h2 class="section-title">Présentation de la <span>Bijouterie Larbi</span></h2>
-                    <p>Située au cœur de Fréha dans la wilaya de Tizi Ouzou, la <strong>Bijouterie Larbi</strong> est votre destination privilégiée pour la joaillerie d'exception et l'artisanat de haute qualité.</p>
-                    <p>Nous vous proposons une vaste gamme de bijoux en or raffinés, soigneusement sélectionnés pour répondre à tous les goûts et célébrer chaque événement marquant de votre vie (mariages, fiançailles, cadeaux d'exception).</p>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <i class="fas fa-gem"></i>
-                            <div>
-                                <h4>Or Authentique & Garanti</h4>
-                                <p>Des pièces de haute qualité façonnées avec précision.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-tools"></i>
-                            <div>
-                                <h4>Atelier de Réparation</h4>
-                                <p>Restauration et entretien professionnel de vos bijoux précieux.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-card">
-                    <div class="card-inner">
-                        <i class="fas fa-crown gold-icon"></i>
-                        <h3>Savoir-Faire & Élégance</h3>
-                        <p>Chaque bijou raconte une histoire d'élégance intemporelle.</p>
-                        <div class="coral-badge">Fréha - Tizi Ouzou</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- 2. En-tête Principal -->
+  <header class="main-header" id="header">
+    <div class="logo">Bijouterie Larbi</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Nos Services</a></li>
+        <li><a href="#social">Suivez-nous</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">Ce Que Nous Offrons</span>
-                <h2 class="section-title">Nos <span>Services & Collections</span></h2>
-                <div class="gold-divider"></div>
-            </div>
+  <!-- 3. Section Hero -->
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <h1>Bijouterie Larbi</h1>
+      <h2>L'Élégance & La Noblesse de la Joaillerie</h2>
+      <p>Découvrez nos collections d'exception en or et diamants, avec nos services exclusifs de location de bijoux et facilités de paiement par facilité.</p>
+      <a href="#services" class="btn-gold">Découvrir nos services</a>
+    </div>
+  </section>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-ring"></i></div>
-                    <h3>Bijoux en Or</h3>
-                    <p>Une sélection exclusive de créations étincelantes conçues pour sublimer votre allure.</p>
-                    <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Bagues & Alliances</li>
-                        <li><i class="fas fa-check"></i> Colliers & Pendentifs</li>
-                        <li><i class="fas fa-check"></i> Bracelets & Gourmets</li>
-                        <li><i class="fas fa-check"></i> Boucles d'oreilles</li>
-                        <li><i class="fas fa-check"></i> Parures complètes</li>
-                    </ul>
-                </div>
+  <!-- 4. Section Services -->
+  <section id="services" class="services-section">
+    <div class="section-title">
+      <h2>Nos Services d'Exception</h2>
+    </div>
 
-                <div class="service-card highlight">
-                    <div class="service-icon"><i class="fas fa-gift"></i></div>
-                    <h3>Cadeaux d'Exception</h3>
-                    <p>Trouvez le cadeau parfait pour vos proches lors des occasions spéciales, fêtes et mariages.</p>
-                    <span class="card-footer-tag">Pièces Uniques</span>
-                </div>
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-icon">💍</div>
+        <h3>Vente de Bijoux</h3>
+        <p>Large sélection de parures en or 18k, bagues de fiançailles, alliances et diamants façonnés avec minutie.</p>
+      </div>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Réparation de Bijoux</h3>
-                    <p>Service expert de nettoyage, polissage, ajustement de taille et réparation de bijoux endommagés.</p>
-                    <span class="card-footer-tag">Service Rapide & Soigné</span>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-icon">👑</div>
+        <h3>Location de Bijoux de Luxe</h3>
+        <p>Sublimez vos mariages et événements précieux grâce à notre service de location de parures royales.</p>
+      </div>
 
-    <!-- Gallery Section -->
-    <section id="galerie" class="gallery">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">Aperçu De Nos Créations</span>
-                <h2 class="section-title">Galerie <span>Prestige</span></h2>
-                <div class="gold-divider"></div>
-            </div>
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-icon">💳</div>
+        <h3>Facilités de Paiement (Facilité)</h3>
+        <p>Achetez vos bijoux préférés en toute flexibilité grâce à nos formules de paiement échelonné.</p>
+      </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-box">
-                        <i class="fas fa-gem"></i>
-                        <h3>Bagues & Alliances</h3>
-                        <p>Or fin & finitions luxueuses</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-box">
-                        <i class="fas fa-dharmachakra"></i>
-                        <h3>Colliers & Parures</h3>
-                        <p>Élégance pour mariages & fêtes</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-box">
-                        <i class="fas fa-circle-notch"></i>
-                        <h3>Bracelets d'Or</h3>
-                        <p>Designs modernes et traditionnels</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-box">
-                        <i class="fas fa-sparkles"></i>
-                        <h3>Boucles d'Oreilles</h3>
-                        <p>Finesse et éclat garantis</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-icon">🛠️</div>
+        <h3>Réparation & Restauration</h3>
+        <p>Restauration, remise à taille, soudure et remise à neuf de vos bijoux anciens et endommagés.</p>
+      </div>
 
-    <!-- Contact & Map Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">Prenez Contact</span>
-                <h2 class="section-title">Nous <span>Rendre Visite</span></h2>
-                <div class="gold-divider"></div>
-            </div>
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Nettoyage & Polissage</h3>
+        <p>Nettoyage professionnel aux ultrasons pour redonner à vos bijoux en or l'éclat du premier jour.</p>
+      </div>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Téléphone</h4>
-                            <p><a href="tel:+213798151902">0798 15 19 02</a></p>
-                        </div>
-                    </div>
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Création Sur-Mesure</h3>
+        <p>Conception et fabrication sur-mesure de vos bijoux selon vos dessins et préférences uniques.</p>
+      </div>
 
-                    <div class="info-card">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/213798151902" target="_blank">0798 15 19 02</a></p>
-                        </div>
-                    </div>
+      <!-- Service 7 -->
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Expertise & Évaluation</h3>
+        <p>Estimation et contrôle rigoureux de la pureté de votre or et pierres précieuses avec certificat.</p>
+      </div>
 
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adresse</h4>
-                            <p>Fréha - Tizi Ouzou - Algérie</p>
-                        </div>
-                    </div>
+      <!-- Service 8 -->
+      <div class="service-card">
+        <div class="service-icon">🎁</div>
+        <h3>Gravure Laser Personnalisée</h3>
+        <p>Personnalisation au laser haute précision : noms, initiales ou dates mémorables sur vos bijoux.</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="social-box">
-                        <h4>Suivez-nous sur les réseaux</h4>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/bijouterie.larbi.1" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/bijouterie.larbi.2025" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.tiktok.com/@bijouterie.larbi" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                            <a href="https://wa.me/213798151902" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
+  <!-- 5. Section Suivez-nous sur les Réseaux -->
+  <section class="social-section" id="social">
+    <div class="section-title">
+      <h2>Suivez Bijouterie Larbi</h2>
+    </div>
+    <p class="social-subtitle">Rejoignez notre communauté sur les réseaux sociaux pour découvrir nos nouveautés au quotidien.</p>
 
-                <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.811833621408!2d4.316667!3d36.750000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ1JzAwLjAiTiA0wrAxOScwMC4wIkU!5e0!3m2!1sfr!2sdz!4v1620000000000!5m2!1sfr!2sdz" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <div class="map-link-btn">
-                        <a href="https://maps.app.goo.gl/gjAoKQNpqqezpjT49?g_st=aw" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-directions"></i> Ouvrir dans Google Maps
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="social-cards-container">
+      <a href="#" class="social-card-item fb-card">
+        <i class="fa-brands fa-facebook" style="color: var(--fb-color);"></i>
+        <span>Facebook</span>
+        <div class="social-btn-large" style="background-color: var(--fb-color);">S'abonner</div>
+      </a>
 
-    <!-- Floating Action Buttons -->
-    <a href="https://wa.me/213798151902" class="floating-btn whatsapp-btn" target="_blank" title="Discuter sur WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+      <a href="#" class="social-card-item ig-card">
+        <i class="fa-brands fa-instagram" style="background: var(--ig-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+        <span>Instagram</span>
+        <div class="social-btn-large" style="background: var(--ig-gradient);">S'abonner</div>
+      </a>
 
-    <a href="tel:+213798151902" class="floating-btn call-btn" title="Appeler directement">
-        <i class="fas fa-phone"></i>
-    </a>
+      <a href="#" class="social-card-item tt-card">
+        <i class="fa-brands fa-tiktok" style="color: #ffffff; text-shadow: -1px -1px 0 #25f4ee, 1px 1px 0 #fe2c55;"></i>
+        <span>TikTok</span>
+        <div class="social-btn-large" style="background-color: #222; border: 1px solid #444;">Suivre</div>
+      </a>
 
-    <button id="back-to-top" class="back-to-top" title="Retour en haut">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+      <a href="#" class="social-card-item wa-card">
+        <i class="fa-brands fa-whatsapp" style="color: var(--wa-color);"></i>
+        <span>WhatsApp</span>
+        <div class="social-btn-large" style="background-color: var(--wa-color);">Nous contacter</div>
+      </a>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <h3>BIJOUTERIE <span>LARBI</span></h3>
-                <p>L'élégance en Or, la beauté pour toujours.</p>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/bijouterie.larbi.1" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/bijouterie.larbi.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com/@bijouterie.larbi" target="_blank"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <div class="footer-copy">
-                <p>&copy; 2026 Bijouterie Larbi. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- 6. Pied de page -->
+  <footer id="contact">
+    <p>Tous droits réservés &copy; 2026 <strong>Bijouterie Larbi</strong> - Luxe & Prestige</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
