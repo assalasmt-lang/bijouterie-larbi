@@ -1,33 +1,325 @@
-// Interactivité pour Bijouterie Larbi
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Bijouterie Larbi Website initialized successfully.');
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #141414;
+  --gold-primary: #D4AF37;
+  --gold-light: #F9E076;
+  --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  --text-light: #f5f5f5;
+  --text-muted: #a0a0a0;
+  
+  /* Couleurs authentiques des réseaux sociaux */
+  --fb-color: #1877F2;
+  --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  --tiktok-color: #000000;
+  --wa-color: #25D366;
+}
 
-    // Sticky Header animation on scroll
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.8)';
-            header.style.background = 'rgba(10, 10, 10, 0.98)';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.background = 'rgba(10, 10, 10, 0.95)';
-        }
-    });
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    // Smooth reveal animation for service cards
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
+html {
+  scroll-behavior: smooth;
+}
 
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
-    });
-});
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* --- Barre Supérieure --- */
+.top-bar {
+  background-color: #000;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.top-bar .contact-info {
+  color: var(--gold-light);
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar .contact-info i {
+  color: var(--gold-primary);
+  margin-right: 6px;
+}
+
+.top-bar .social-icons-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-btn.fb { background-color: var(--fb-color); box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3); }
+.social-btn.ig { background: var(--ig-gradient); box-shadow: 0 4px 10px rgba(220, 39, 67, 0.3); }
+.social-btn.tt { background-color: var(--tiktok-color); border: 1px solid #333; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); }
+.social-btn.tt i { text-shadow: -1px -1px 0 #25f4ee, 1px 1px 0 #fe2c55; }
+.social-btn.wa { background-color: var(--wa-color); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
+
+/* --- En-tête Principal --- */
+.main-header {
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 10, 10, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: background 0.3s ease;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold-primary);
+}
+
+/* --- Section Hero --- */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.92)), 
+              url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1920') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  margin-bottom: 10px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #000;
+  padding: 14px 40px;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* --- Section Services --- */
+.services-section {
+  padding: 70px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--gold-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: var(--gold-gradient);
+  margin: 10px auto 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 5% 40px;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+}
+
+.service-icon {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  color: var(--gold-light);
+  margin-bottom: 14px;
+  font-size: 1.25rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* --- Section Réseaux Sociaux --- */
+.social-section {
+  background-color: #000;
+  padding: 70px 5%;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  text-align: center;
+}
+
+.social-subtitle {
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: -25px auto 35px;
+  font-size: 0.95rem;
+}
+
+.social-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.social-card-item {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.social-card-item:hover {
+  transform: translateY(-6px);
+}
+
+.social-card-item.fb-card:hover { border-color: var(--fb-color); }
+.social-card-item.ig-card:hover { border-color: #dc2743; }
+.social-card-item.tt-card:hover { border-color: #ffffff; }
+.social-card-item.wa-card:hover { border-color: var(--wa-color); }
+
+.social-card-item i { font-size: 2.4rem; }
+.social-card-item span { font-weight: 600; font-size: 1.05rem; }
+
+.social-btn-large {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+}
+
+/* --- Pied de page --- */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+@media (max-width: 768px) {
+  .top-bar { flex-direction: column; gap: 10px; text-align: center; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero h2 { font-size: 1.2rem; }
+  .nav-links { gap: 15px; }
+}
