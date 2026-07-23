@@ -1,65 +1,33 @@
-// Mobile Navigation Toggle
-const mobileToggle = document.getElementById('mobile-toggle');
-const navMenu = document.querySelector('.nav-menu');
+// Interactivité pour Bijouterie Larbi
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Bijouterie Larbi Website initialized successfully.');
 
-mobileToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = mobileToggle.querySelector('i');
-    if(navMenu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Close menu when clicking nav links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    });
-});
-
-// Back to Top Button Visibility
-const backToTopBtn = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-        backToTopBtn.style.display = 'flex';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
-
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Scroll Reveal Animation via IntersectionObserver
-const observerOptions = {
-    threshold: 0.15
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
+    // Sticky Header animation on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.8)';
+            header.style.background = 'rgba(10, 10, 10, 0.98)';
+        } else {
+            header.style.boxShadow = 'none';
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
         }
     });
-}, observerOptions);
 
-document.querySelectorAll('.service-card, .gallery-item, .info-card, .about-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(25px)';
-    el.style.transition = 'all 0.5s ease-out';
-    observer.observe(el);
+    // Smooth reveal animation for service cards
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+    });
 });
